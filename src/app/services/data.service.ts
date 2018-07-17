@@ -11,10 +11,10 @@ export class DataService {
 
   getMainView() {
 		return new Promise(resolve => {
-		  	this.http.get('assets/JSON/config/mainview.json').subscribe(data => {
-				resolve(data);
-		  	}, err => {
-				console.log(err);
+				this.http.get('assets/JSON/config/mainview.json')
+				.subscribe(data => {resolve(data);}, 
+				err => {
+					console.log(err);
 		  	});
     });
 	}
