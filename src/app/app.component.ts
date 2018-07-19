@@ -20,6 +20,7 @@ import { DataService } from './services/data.service';
 })
 export class AppComponent implements OnInit {
   mainview:any;
+  menus:string;
   contents:any;
   	constructor(public service: DataService) { 
 
