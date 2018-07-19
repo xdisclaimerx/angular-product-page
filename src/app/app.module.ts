@@ -8,9 +8,11 @@ import { UserComponent } from './components/user/user.component';
 import { ProductsComponent } from './components/products/products.component';
 import { DataService } from './services/data.service';
 import { HttpClient } from '@angular/common/http';
-import { NavComponent } from './components/nav/nav.component';
+
+import { MainComponent } from './components/main/main.component';
 
 const appRoutes: Routes = [
+  {path: '', component:MainComponent},
   {path: 'users', component:UserComponent},
   {path: 'products', component:ProductsComponent}
 ]
@@ -20,7 +22,7 @@ const appRoutes: Routes = [
     AppComponent,
     UserComponent,
     ProductsComponent,
-    NavComponent
+    MainComponent
   ],
   imports: [
     BrowserModule,

@@ -5,12 +5,16 @@ import { DataService } from './services/data.service';
   selector: 'app-root',
   template: `
   <div class="container">
-    <app-nav></app-nav>
-    <router-outlet></router-outlet>
-    <div class="jumbotron">
-      <h1 class="display-3" innerHTML="{{contents}}"></h1>
-      <hr class="my-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="collapse navbar-collapse" id="navbarColor03">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" *ngFor="let menu of menus">
+          <a routerLink="{{ menu.name }}" class="nav-link">{{ menu.displayName }}<span class="sr-only"></span></a>
+        </li>
+      </ul>
     </div>
+    </nav>
+    <router-outlet></router-outlet>
   </div>
   `,
 })
@@ -27,6 +31,7 @@ export class AppComponent implements OnInit {
 
 			this.mainview = data;
       this.contents = this.mainview.content;
+      this.menus=this.mainview.menu;
       console.log(data)
     });
   }
