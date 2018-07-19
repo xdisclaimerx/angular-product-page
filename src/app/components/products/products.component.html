@@ -1,17 +1,17 @@
 
 <h1>Product List</h1>
-<div class="responsive-table">
-  <table>
+  <table class="table table-hover">
     <thead>
       <tr>
-        <th *ngFor="let product of columnDisplayName">{{ product.columnDisplayName }}</th>
+        <th *ngFor="let product of columnDisplayName" scope="col">{{ product.columnDisplayName }}</th>
       </tr>
-      <tr *ngFor="let productlist of productdata">
+    </thead>
+    <tbody>
+      <tr class="table-danger" *ngFor="let productlist of productdata">
         <td>{{ productlist.productName }}</td>
         <td>{{ productlist.stockCount }}</td>
         <td>{{ productlist.manufacturer }}</td>
         <td>{{ productlist.description }}</td>
       </tr>
-    </thead>
+    </tbody>
   </table>
-</div>
