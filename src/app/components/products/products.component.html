@@ -1,12 +1,16 @@
 
+<h1>Product List</h1>
 <div class="responsive-table">
   <table>
     <thead>
       <tr>
-        <th>{{contents}}</th>
-        <th>{{contents}}</th>
-        <th>{{contents}}</th>
-        <th>{{contents}}</th>
+        <th *ngFor="let product of columnDisplayName">{{ product.columnDisplayName }}</th>
+      </tr>
+      <tr *ngFor="let productlist of productdata">
+        <td>{{ productlist.productName }}</td>
+        <td>{{ productlist.stockCount }}</td>
+        <td>{{ productlist.manufacturer }}</td>
+        <td>{{ productlist.description }}</td>
       </tr>
     </thead>
   </table>

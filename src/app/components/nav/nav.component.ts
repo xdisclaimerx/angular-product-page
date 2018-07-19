@@ -9,6 +9,8 @@ import { DataService } from '../../services/data.service';
 export class NavComponent implements OnInit {
   mainview:any;
   menus:string;
+  displayName:string;
+  contents:any;
   	constructor(public service: DataService) { 
 
 	}
@@ -19,8 +21,7 @@ export class NavComponent implements OnInit {
       
 			this.mainview = data;
       this.menus=this.mainview.menu;
-      // console.log(data)
-
+      this.contents = this.mainview.content;
 		});
   }
 

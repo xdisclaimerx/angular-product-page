@@ -8,25 +8,28 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
-  mainview:any;
-	names:string;
+  products:any;
   contents:any;
-  menus:string;
-  	constructor(public service: DataService) { 
-
-	}
+  productdata: any;
+  columnDisplayName:any;
+  	constructor(public service: DataService) {}
 	
   ngOnInit() {
-    this.service.getMainView()
-		.then(data => {
+    
+    this.service.getProductHeader()
+		.then(proddata => {
+      this.products = proddata;
+      this.columnDisplayName = this.products.columndFields;
+      console.log(this.products.columndFields);
+    });
+    
+    this.service.getProductList()
+		.then(proddatalist => {
       
-			this.mainview = data;
-			this.names = this.mainview.name;
-      this.contents = this.mainview.content;
-      // console.log(data)
+      this.productdata = proddatalist;
+      console.log(proddatalist);
+    });
 
-		});
   }
 
 }
